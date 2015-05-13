@@ -7,5 +7,6 @@ module map {
 		location: ng.ILocationService;
         introVm: IntroController;
         formVm: FormController;
+        testform: ng.IFormController;
 	}
 }

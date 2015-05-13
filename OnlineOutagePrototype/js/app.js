@@ -146,6 +146,14 @@ var map;
             this.mRadValue = true;
             $scope.formVm = this;
         }
+        FormController.prototype.submitForm = function () {
+            console.log(this.$scope.testform.$valid);
+            var old = this.$location.hash();
+            this.$location.hash('emailField');
+            this.$anchorScroll();
+            //reset to old to keep any additional routing logic from kicking in
+            this.$location.hash(old);
+        };
         // $inject annotation.
         // It provides $injector with information about dependencies to be injected into constructor
         // it is better to have it close to the constructor, because the parameters must match in count and type.
